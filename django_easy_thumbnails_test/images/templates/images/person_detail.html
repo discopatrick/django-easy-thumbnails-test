@@ -1,11 +1,12 @@
 <html>
+{% load thumbnail %}
 
 <body>
 
 <h1>Person Detail</h1>
 
 <div>
-    <p><img src="{{ person.image.url }}"/></p>
+    <p><img src="{{ person.image|thumbnail_url:'detail' }}"/></p>
 </div>
 
 </body>

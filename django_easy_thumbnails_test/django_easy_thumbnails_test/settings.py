@@ -38,6 +38,8 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'easy_thumbnails',
+
     'images',
 )
 
@@ -106,3 +108,10 @@ STATIC_ROOT = '../static/'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = '../media/'
+
+THUMBNAIL_ALIASES = {
+    '': {
+        'list': {'size': (50, 50), 'crop': True},
+        'detail': {'size': (200, 200), 'crop': True},
+    },
+}
