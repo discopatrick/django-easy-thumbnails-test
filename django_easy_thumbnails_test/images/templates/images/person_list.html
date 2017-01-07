@@ -1,0 +1,15 @@
+<html>
+
+<body>
+
+<h1>Person List</h1>
+
+<ul>
+  {% for person in person_list %}
+    <li><a href="{{ person.get_absolute_url }}"><img src="{{ person.image.url }}"/></a></li>
+  {% endfor %}
+</ul>
+
+</body>
+
+</html>

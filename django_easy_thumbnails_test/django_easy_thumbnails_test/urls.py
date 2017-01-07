@@ -15,7 +15,16 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from django.conf import settings
+from django.conf.urls.static import static
+
+from images import views
 
 urlpatterns = [
+
     url(r'^admin/', include(admin.site.urls)),
-]
+
+    url(r'^$', views.PersonList.as_view(), name='images_person_list'),
+    url(r'^person/(?P<pk>\d+)/$', views.PersonDetail.as_view(), name='images_person_detail'),
+
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
